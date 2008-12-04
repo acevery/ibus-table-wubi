@@ -1,0 +1,10 @@
+Requirements:
+
+    You need to install ibus-table first; if you want to integrate extra
+    Chinese phrases, you also need to install ibus-table-extraphrase
+    beforehand.
+
+Introduction:
+    
+    You can choose either wubi86 or wubi98 or both to install via
+    configure.
