@@ -69,11 +69,13 @@ AC_ARG_ENABLE([extra-phrases],
 AM_CONDITIONAL([IBUS_TABLE_EXTRA_PHRASES],[test x"$enable_extra_phrases" == x"yes"])
 
 # check for ibus-table-extraphrase, if we need it.
-AC_ARG_VAR([IBUS_TABLE_EXTRAPHRASE],
-           [[ibus-table-extraphrase, which print the path to extra_phrase.]])
 if test x"$enable_extra_phrases" == x"yes"; then
-    AC_PATH_PROG([IBUS_TABLE_EXTRAPHRASE],[ibus-table-extraphrase],
-            [AC_MSG_ERROR([ibus-table-extraphrase not found.])])
+    PKG_PROG_PKG_CONFIG([0.20])
+    IBUS_TABLE_EXTRAPHRASE=`$PKG_CONFIG --variable=extraphrasepath ibus-table-extraphrase`
+    if test "x$IBUS_TABLE_EXTRAPHRASE" == "x"; then
+        AC_MSG_ERROR([ibus-table-extraphrase not found.])
+    fi
+    AC_SUBST(IBUS_TABLE_EXTRAPHRASE)
 fi
 
 # OUTPUT files

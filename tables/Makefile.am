@@ -25,7 +25,7 @@ createdb = \
 	$(IBUS_TABLE_CREATEDB) 
 
 if IBUS_TABLE_EXTRA_PHRASES
-createdb += -e `$(IBUS_TABLE_EXTRAPHRASE)`
+createdb += -e @IBUS_TABLE_EXTRAPHRASE@
 endif
 
 tables_DATA =
