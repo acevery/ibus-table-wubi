@@ -1,6 +1,6 @@
 # vim:set ts=4
 #
-# ibus-table-wubi - The zhengma database of Table engine for IBus
+# ibus-table-wubi - The WuBi database of Table engine for IBus
 #
 # Copyright (c) 2008-2008 Yu Yuwei <acevery@gmail.com>
 #

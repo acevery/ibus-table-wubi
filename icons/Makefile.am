@@ -1,6 +1,6 @@
 # vim:set ts=4
 #
-# ibus-table-zhengma - The ZhengMa for IBus Tables.
+# ibus-table-wubi - The WuBi for IBus Tables.
 #
 # Copyright (c) 2008-2008 Yu Yuwei <acevery@gmail.com>
 #
