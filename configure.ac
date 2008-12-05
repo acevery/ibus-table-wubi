@@ -23,7 +23,7 @@ m4_define([package_name], [ibus-table-wubi])
 m4_define([ibus_released], [0])
 m4_define([ibus_major_version], [0])
 m4_define([ibus_minor_version], [1])
-m4_define([ibus_micro_version], [1])
+m4_define([ibus_micro_version], [2])
 m4_define(ibus_maybe_datestamp,
     m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -40,6 +40,8 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_PATH_PYTHON([2.5])
 
 # check for ibus-table-createdb
+PKG_CHECK_MODULES([IBUS_TABLE],[ibus-table >= 0.1.2])
+
 AC_ARG_VAR([IBUS_TABLE_CREATEDB],[[ibus-table-createdb, which generate db]])
 
 AC_PATH_PROG([IBUS_TABLE_CREATEDB],[ibus-table-createdb],
@@ -70,11 +72,8 @@ AM_CONDITIONAL([IBUS_TABLE_EXTRA_PHRASES],[test x"$enable_extra_phrases" == x"ye
 
 # check for ibus-table-extraphrase, if we need it.
 if test x"$enable_extra_phrases" == x"yes"; then
-    PKG_PROG_PKG_CONFIG([0.20])
+    PKG_CHECK_MODULES([EXTRA_PHRASE],[ibus-table-extraphrase >= 0.1.2])
     IBUS_TABLE_EXTRAPHRASE=`$PKG_CONFIG --variable=extraphrasepath ibus-table-extraphrase`
-    if test "x$IBUS_TABLE_EXTRAPHRASE" == "x"; then
-        AC_MSG_ERROR([ibus-table-extraphrase not found.])
-    fi
     AC_SUBST(IBUS_TABLE_EXTRAPHRASE)
 fi
 
