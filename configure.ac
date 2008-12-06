@@ -65,7 +65,7 @@ AM_CONDITIONAL([IBUS_TABLE_BUILD_WUBI98],[test x"$enable_wubi98" = x"yes"])
 # the option for extra phrases
 AC_ARG_ENABLE([extra-phrases],
     [AC_HELP_STRING([--enable-extra-phrases],
-        [Add extra phrases into builded Engine])], ,
+        [Add extra phrases into built Engine])], ,
     [enable_extra_phrases=no])
 
 AM_CONDITIONAL([IBUS_TABLE_EXTRA_PHRASES],[test x"$enable_extra_phrases" == x"yes"])
