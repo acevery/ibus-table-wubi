@@ -72,7 +72,7 @@ AM_CONDITIONAL([IBUS_TABLE_EXTRA_PHRASES],[test x"$enable_extra_phrases" == x"ye
 
 # check for ibus-table-extraphrase, if we need it.
 if test x"$enable_extra_phrases" == x"yes"; then
-    PKG_CHECK_MODULES([EXTRA_PHRASE],[ibus-table-extraphrase >= 0.1.2])
+    PKG_CHECK_MODULES([EXTRA_PHRASE],[ibus-table-extraphrase >= 1.1.0])
     IBUS_TABLE_EXTRAPHRASE=`$PKG_CONFIG --variable=extraphrasepath ibus-table-extraphrase`
     AC_SUBST(IBUS_TABLE_EXTRAPHRASE)
 fi
