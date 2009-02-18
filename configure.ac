@@ -2,7 +2,7 @@
 #
 # ibus-table-wubi - The WuBi for IBus Tables.
 #
-# Copyright (c) 2008-2008 Yu Yuwei <acevery@gmail.com>
+# Copyright (c) 2008-2009 Yu Yuwei <acevery@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,9 +21,9 @@
 # if not 1, append datestamp to the version number.
 m4_define([package_name], [ibus-table-wubi])
 m4_define([ibus_released], [0])
-m4_define([ibus_major_version], [0])
+m4_define([ibus_major_version], [1])
 m4_define([ibus_minor_version], [1])
-m4_define([ibus_micro_version], [2])
+m4_define([ibus_micro_version], [0])
 m4_define(ibus_maybe_datestamp,
     m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -40,7 +40,7 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_PATH_PYTHON([2.5])
 
 # check for ibus-table-createdb
-PKG_CHECK_MODULES([IBUS_TABLE],[ibus-table >= 0.1.2])
+PKG_CHECK_MODULES([IBUS_TABLE],[ibus-table >= 1.1.0])
 
 AC_ARG_VAR([IBUS_TABLE_CREATEDB],[[ibus-table-createdb, which generate db]])
 

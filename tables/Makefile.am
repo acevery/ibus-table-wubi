@@ -2,7 +2,7 @@
 #
 # ibus-table-wubi - The WuBi for IBus Tables.
 #
-# Copyright (c) 2008-2008 Yu Yuwei <acevery@gmail.com>
+# Copyright (c) 2008-2009 Yu Yuwei <acevery@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,23 +29,18 @@ createdb += -e @IBUS_TABLE_EXTRAPHRASE@
 endif
 
 tables_DATA =
-engine_DATA =
 
 if IBUS_TABLE_BUILD_WUBI86
 tables_DATA += wubi86.db
-engine_DATA += wubi86.engine
 endif
 
 if IBUS_TABLE_BUILD_WUBI98
 tables_DATA += wubi98.db
-engine_DATA += wubi98.engine
 endif
 
 tables_DATA += $(NULL)
-engine_DATA += $(NULL)
 
 tablesdir = $(datadir)/ibus-table/tables
-enginedir = $(datadir)/ibus/engine
 
 EXTRA_DIST = \
 	wubi86.txt \
@@ -54,11 +49,7 @@ EXTRA_DIST = \
 
 DISTCLEANFILES = \
 	*.db \
-	*.engine \
 	$(NULL)
-
-.db.engine:
-	@echo "$@ is done:)"
 
 .txt.db:
 	$(createdb) -n $@ -s $<
