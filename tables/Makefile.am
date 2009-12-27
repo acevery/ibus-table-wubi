@@ -34,12 +34,17 @@ if IBUS_TABLE_BUILD_WUBI86
 tables_DATA += wubi86.db
 endif
 
+if IBUS_TABLE_BUILD_WUBI98
+tables_DATA += wubi98.db
+endif
+
 tables_DATA += $(NULL)
 
 tablesdir = $(datadir)/ibus-table/tables
 
 EXTRA_DIST = \
 	wubi86.txt \
+	wubi98.txt \
 	$(NULL)
 
 DISTCLEANFILES = \
