@@ -63,6 +63,13 @@ AC_ARG_ENABLE([wubi98],
 
 AM_CONDITIONAL([IBUS_TABLE_BUILD_WUBI98],[test x"$enable_wubi98" = x"yes"])
 
+AC_ARG_ENABLE([wubi2008],
+    [AC_HELP_STRING([--enable-wubi2008],
+        [Generate WuBi2008 Engine])], ,
+    [enable_wubi2008=no])
+
+AM_CONDITIONAL([IBUS_TABLE_BUILD_WUBI2008],[test x"$enable_wubi2008" = x"yes"])
+
 # the option for extra phrases
 AC_ARG_ENABLE([extra-phrases],
     [AC_HELP_STRING([--enable-extra-phrases],
@@ -91,6 +98,7 @@ AC_MSG_RESULT([
 Build options:
   Version                   $VERSION
   Install prefix            $prefix
+  Build WuBi2008            $enable_wubi2008
   Build WuBi98              $enable_wubi98
   Build WuBi86              $enable_wubi86
   Integrate Extra Phrases   $enable_extra_phrases

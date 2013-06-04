@@ -29,6 +29,10 @@ if IBUS_TABLE_BUILD_WUBI98
 icons_DATA += wubi98.svg
 endif
 
+if IBUS_TABLE_BUILD_WUBI2008
+icons_DATA += wubi2008.svg
+endif
+
 icons_DATA += $(NULL)
 
 iconsdir = $(datadir)/ibus-table/icons
@@ -36,4 +40,5 @@ iconsdir = $(datadir)/ibus-table/icons
 EXTRA_DIST = \
 	wubi86.svg \
 	wubi98.svg \
+	wubi2008.svg \
 	$(NULL)
